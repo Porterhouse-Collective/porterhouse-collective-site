@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Porterhouse Collective</title>
 
 <style>
@@ -38,6 +41,7 @@ margin-bottom:10px;
 
 h2{
 font-size:36px;
+text-align:center;
 }
 
 p{
@@ -64,7 +68,7 @@ color:white;
 
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(4,1fr);
 gap:40px;
 margin-top:60px;
 }
@@ -85,11 +89,29 @@ padding:40px;
 font-size:14px;
 }
 
+@media(max-width:900px){
+.services{
+grid-template-columns:1fr 1fr;
+}
+}
+
+@media(max-width:600px){
+.services{
+grid-template-columns:1fr;
+}
+
+h1{
+font-size:42px;
+}
+
+}
+
 </style>
 
 </head>
 
 <body>
+
 
 <section class="hero">
 
@@ -104,32 +126,72 @@ growth, and change.
 
 </section>
 
+
 <section class="container">
 
-<h2 style="text-align:center">What I Do</h2>
+<h2>Services</h2>
 
 <div class="services">
 
 <div class="card">
-<h3>Strategic Advisory</h3>
-<p>Helping leaders make confident decisions about people,
-structure, and growth.</p>
+
+<h3>Startup Hiring Strategy</h3>
+
+<p>
+Designing the right hiring roadmap for early-stage and scaling
+companies. This includes role prioritization, hiring sequencing,
+budget planning, and defining what “great” looks like for each role
+so teams can hire intentionally instead of reactively.
+</p>
+
 </div>
 
-<div class="card">
-<h3>Organizational Design</h3>
-<p>Aligning teams, roles, and priorities to support execution.</p>
-</div>
 
 <div class="card">
-<h3>Change & Transformation</h3>
-<p>Supporting organizations through complex transitions with
-clarity and momentum.</p>
+
+<h3>Recruiting Process & Hiring System Setup</h3>
+
+<p>
+Building structured recruiting systems that make hiring faster,
+clearer, and more consistent. This includes interview frameworks,
+candidate evaluation processes, scorecards, and practical workflows
+that allow teams to scale hiring without chaos.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Marketplace & Network Development</h3>
+
+<p>
+Designing and growing talent networks, referral ecosystems, and
+marketplace-style sourcing strategies. Helping organizations build
+sustainable pipelines of high-quality candidates through relationships,
+communities, and structured outreach.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Operational Process Review & Improvement</h3>
+
+<p>
+Assessing existing operational workflows and identifying where systems,
+communication, or decision making break down. Delivering practical
+improvements that increase clarity, reduce friction, and help teams
+execute more effectively.
+</p>
+
 </div>
 
 </div>
 
 </section>
+
 
 <section class="section-dark">
 
@@ -147,11 +209,14 @@ consulting firms.
 
 </section>
 
+
 <footer>
 
 © Porterhouse Collective
 
 </footer>
 
+
 </body>
+
 </html>
