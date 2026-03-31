@@ -202,15 +202,17 @@
     #services { background: var(--cream-warm); }
     .services-grid {
       display: flex; flex-direction: column;
-      max-width: 820px; margin: 0 auto;
+      max-width: 680px; margin: 0 auto;
+      gap: 20px;
     }
     .service-card {
-      border-bottom: 1px solid rgba(35,16,8,0.10);
-      background: transparent; border-radius: 0;
-      box-shadow: none; padding: 0; transition: none;
+      background: #fff; border-radius: 16px;
+      padding: 40px 40px 44px;
+      box-shadow: 0 2px 16px rgba(35,16,8,0.06);
+      transition: box-shadow 0.2s, transform 0.2s;
     }
-    .service-card:first-child { border-top: 1px solid rgba(35,16,8,0.10); }
-    .service-card:hover { box-shadow: none; transform: none; }
+    .service-card:first-child { border-top: none; }
+    .service-card:hover { box-shadow: 0 6px 28px rgba(35,16,8,0.10); transform: translateY(-2px); }
     .service-card-row {
       display: flex; align-items: center; justify-content: space-between;
       padding: 28px 0; cursor: pointer; gap: 16px;
