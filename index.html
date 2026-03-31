@@ -201,8 +201,8 @@
     /* ── SERVICES — old rounded card style ── */
     #services { background: var(--cream-warm); }
     .services-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      display: flex; flex-direction: column;
+      gap: 16px;
     }
     .service-card {
       background: #fff; border-radius: 16px;
@@ -210,27 +210,59 @@
       box-shadow: 0 2px 16px rgba(35,16,8,0.06);
       transition: box-shadow 0.2s, transform 0.2s;
     }
+    .service-card:first-child { border-top: none; }
     .service-card:hover { box-shadow: 0 6px 28px rgba(35,16,8,0.10); transform: translateY(-2px); }
-    .service-card-top {
-      display: flex; justify-content: space-between;
-      align-items: flex-start; margin-bottom: 16px;
+    .service-card-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 28px 0; cursor: pointer; gap: 16px;
     }
-    .service-card h3 {
-      font-family: var(--serif); font-size: 24px; font-weight: 600;
-      color: var(--text-light); line-height: 1.2; max-width: 260px;
+    .service-card-text { flex: 1; }
+    .service-card-text h3 {
+      font-family: var(--serif); font-size: 22px; font-weight: 600;
+      color: var(--text-light); line-height: 1.2; margin-bottom: 6px;
     }
-    .service-num {
-      display: flex; align-items: center; justify-content: center;
+    .service-card-text .service-tagline {
+      font-family: var(--sans); font-size: 14px;
+      color: var(--text-muted); line-height: 1.5;
+    }
+    .service-card-toggle {
       width: 32px; height: 32px; border-radius: 50%;
       border: 1.5px solid var(--orange-hover);
-      font-family: var(--serif); font-size: 13px; font-weight: 500;
-      color: var(--orange-hover); letter-spacing: 0.05em;
-      flex-shrink: 0; margin-top: 2px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: background 0.2s;
+      color: var(--orange-hover); font-size: 20px; line-height: 1;
+      user-select: none;
     }
-    .service-card p {
-      font-size: 15px; font-weight: 300; line-height: 1.8; color: var(--text-mid);
+    .service-card.open .service-card-toggle {
+      background: var(--orange-hover); color: #fff;
     }
-    @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
+    .service-card-body { display: none; padding-bottom: 32px; }
+    .service-card.open .service-card-body { display: block; }
+    .service-card-framing {
+      font-family: var(--serif); font-style: italic;
+      font-size: 17px; color: var(--text-muted); line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .service-card-bullets { list-style: none; padding: 0; margin: 0 0 24px; }
+    .service-card-bullets li {
+      font-family: var(--sans); font-size: 15px; color: var(--text-light);
+      line-height: 1.6; padding: 6px 0 6px 20px; position: relative;
+    }
+    .service-card-bullets li::before {
+      content: '\2014'; position: absolute; left: 0; color: var(--gold); font-weight: 600;
+    }
+    .service-card-outcome {
+      background: var(--brown); border-radius: 10px; padding: 20px 24px;
+    }
+    .service-card-outcome-label {
+      font-family: var(--sans); font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--gold); margin-bottom: 8px;
+    }
+    .service-card-outcome-text {
+      font-family: var(--serif); font-size: 16px;
+      color: var(--cream); line-height: 1.6; font-style: italic;
+    }
 
     /* ── APPROACH — old style: dark brown, rounded cards, radiating orange ── */
     #approach { background: var(--brown); padding: 96px 0; }
@@ -485,42 +517,106 @@
       <div class="section-head fade-up">
         <span class="section-eyebrow">Services</span>
         <h2>Focused support where growth tends to get messy.</h2>
-        <p>Designed for early-stage and scaling organizations that want substance and clear outcomes — not a consulting engagement that outlasts the problem.</p>
+        <p>Designed for early-stage and scaling organizations that want substance and clear outcomes &#8212; not a consulting engagement that outlasts the problem.</p>
       </div>
-      <div class="services-grid">
-        <article class="service-card fade-up">
-          <div class="service-card-top">
-            <h3>Fractional Talent Acquisition Support</h3>
-            <span class="service-num">01</span>
+      <div class="services-grid fade-up">
+
+        <article class="service-card">
+          <div class="service-card-row" onclick="toggleCard(this)">
+            <div class="service-card-text">
+              <h3>Fractional Talent Acquisition Support</h3>
+              <p class="service-tagline">Part-time, embedded recruiting support &#8212; a real hiring function without the full-time overhead.</p>
+            </div>
+            <div class="service-card-toggle">+</div>
           </div>
-          <p>Part-time, embedded recruiting support for growing startups that need a real recruiting function without the overhead of a full-time hire. This includes sourcing candidates for priority roles, advising hiring managers on evaluation, coordinating interviews and process steps, and guiding offer strategy and candidate experience. Engagements are structured to stay focused and high-quality.</p>
-        </article>
-        <article class="service-card fade-up delay-1">
-          <div class="service-card-top">
-            <h3>Recruiting Systems &amp; Strategy</h3>
-            <span class="service-num">02</span>
+          <div class="service-card-body">
+            <p class="service-card-framing">For teams that need hiring to move but aren&#8217;t ready for a full-time recruiter. Engagements are scoped to your most critical roles and structured to stay focused.</p>
+            <ul class="service-card-bullets">
+              <li>Source and manage candidates for priority roles</li>
+              <li>Advise hiring managers on evaluation and decision-making</li>
+              <li>Coordinate interviews and own the candidate experience end-to-end</li>
+              <li>Guide offer strategy and closing</li>
+            </ul>
+            <div class="service-card-outcome">
+              <p class="service-card-outcome-label">You walk away with</p>
+              <p class="service-card-outcome-text">A focused recruiting function that keeps hiring moving &#8212; without adding permanent headcount.</p>
+            </div>
           </div>
-          <p>Designing the right hiring roadmap and building the structured systems to support it. This covers role prioritization, hiring sequencing, interview frameworks, candidate evaluation processes, scorecards, and practical workflows — so teams can hire intentionally and scale without chaos.</p>
         </article>
-        <article class="service-card fade-up delay-2">
-          <div class="service-card-top">
-            <h3>Marketplace &amp; Network Development</h3>
-            <span class="service-num">03</span>
+
+        <article class="service-card">
+          <div class="service-card-row" onclick="toggleCard(this)">
+            <div class="service-card-text">
+              <h3>Recruiting Systems &amp; Hiring Infrastructure</h3>
+              <p class="service-tagline">A repeatable hiring process built from scratch, so you&#8217;re not reinventing it every time you open a role.</p>
+            </div>
+            <div class="service-card-toggle">+</div>
           </div>
-          <p>Designing and growing talent networks, referral ecosystems, and marketplace-style sourcing strategies. Helping organizations build sustainable pipelines of high-quality candidates through relationships, communities, and structured outreach.</p>
-        </article>
-        <article class="service-card fade-up delay-3">
-          <div class="service-card-top">
-            <h3>Operational Process Review &amp; Improvement</h3>
-            <span class="service-num">04</span>
+          <div class="service-card-body">
+            <p class="service-card-framing">Most early teams hire reactively. This work builds the structure underneath &#8212; so when you&#8217;re ready to scale, the foundation is already there and your team knows how to use it.</p>
+            <ul class="service-card-bullets">
+              <li>Design structured interview processes and evaluation scorecards</li>
+              <li>Set up or optimize your ATS, or build a lightweight system if you don&#8217;t have one</li>
+              <li>Create consistent feedback and decision workflows across the hiring team</li>
+              <li>Improve candidate experience from first touch to offer</li>
+            </ul>
+            <div class="service-card-outcome">
+              <p class="service-card-outcome-label">You walk away with</p>
+              <p class="service-card-outcome-text">A hiring system that saves time, sharpens decisions, and scales with you as the team grows.</p>
+            </div>
           </div>
-          <p>Assessing existing operational workflows and identifying where systems, communication, or decision-making break down. Delivering practical improvements that increase clarity, reduce friction, and help teams execute more effectively.</p>
         </article>
+
+        <article class="service-card">
+          <div class="service-card-row" onclick="toggleCard(this)">
+            <div class="service-card-text">
+              <h3>Talent Network &amp; Pipeline Development</h3>
+              <p class="service-tagline">Build the candidate pipelines and referral networks your company will rely on &#8212; before you urgently need them.</p>
+            </div>
+            <div class="service-card-toggle">+</div>
+          </div>
+          <div class="service-card-body">
+            <p class="service-card-framing">Great hires rarely come from a job posting alone. This work helps you build sustainable sourcing relationships so you&#8217;re not starting from zero every time you open a role.</p>
+            <ul class="service-card-bullets">
+              <li>Define your ideal candidate profiles and referral source targets</li>
+              <li>Design outreach strategies to grow your talent network proactively</li>
+              <li>Build community and relationship-based sourcing approaches</li>
+              <li>Create lightweight processes to keep pipelines warm between active searches</li>
+            </ul>
+            <div class="service-card-outcome">
+              <p class="service-card-outcome-label">You walk away with</p>
+              <p class="service-card-outcome-text">A sustainable sourcing foundation that reduces dependency on reactive job postings and agency spend.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card-row" onclick="toggleCard(this)">
+            <div class="service-card-text">
+              <h3>Recruiting &amp; People Operations Review</h3>
+              <p class="service-tagline">A structured look at how your hiring and people processes are actually running &#8212; and where they&#8217;re slowing you down.</p>
+            </div>
+            <div class="service-card-toggle">+</div>
+          </div>
+          <div class="service-card-body">
+            <p class="service-card-framing">Designed specifically for recruiting and people operations &#8212; not general business process consulting. If your hiring workflows feel inconsistent or hard to manage, this is where to start.</p>
+            <ul class="service-card-bullets">
+              <li>Audit current recruiting workflows, handoffs, and decision points</li>
+              <li>Identify bottlenecks, inconsistencies, and breakdown points across the process</li>
+              <li>Simplify and restructure for cleaner, more consistent execution</li>
+              <li>Deliver practical recommendations your team can act on immediately</li>
+            </ul>
+            <div class="service-card-outcome">
+              <p class="service-card-outcome-label">You walk away with</p>
+              <p class="service-card-outcome-text">Cleaner hiring and people operations so your team moves faster and fewer things fall through the cracks.</p>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <!-- APPROACH -->
   <section id="approach">
     <div class="container">
       <div class="section-head fade-up">
@@ -566,10 +662,6 @@
           <h2>Looking for a thought partner who can bring order to growth?</h2>
           <p>Whether you are refining your hiring strategy, building repeatable recruiting systems, strengthening a marketplace or network, or improving internal processes — the path forward starts with a conversation.</p>
           <p>Prefer a lighter-touch first step? Start with a short note about what you are building, where things feel stuck, and what kind of support would be most useful.</p>
-          <div class="contact-direct">
-            <span>Or reach out directly:</span>
-            <a href="/cdn-cgi/l/email-protection#44272b2a3025273004342b363021362c2b313721272b28282127302d32216a272b29"><span class="__cf_email__" data-cfemail="cdaea2a3b9acaeb98dbda2bfb9a8bfa5a2b8bea8aea2a1a1a8aeb9a4bba8e3aea2a0">[email&#160;protected]</span></a>
-          </div>
         </div>
         <div class="contact-form fade-up delay-2">
           <h3>Start here</h3>
@@ -621,12 +713,26 @@
           <span>Collective</span>
         </div>
       </div>
-      <div class="footer-info">
-        <span>Charlotte, NC</span>
-        <a href="mailto:contact@porterhousecollective.com">contact@porterhousecollective.com</a>
-        <span>LinkedIn — coming soon</span>
-      </div>
       <div class="footer-copy">
         <span>&copy; 2026 Porterhouse Collective LLC</span><br>
         <span style="font-size:12px;color:var(--orange-hover);">Independent consulting for hiring, systems, and operational clarity.</span>
       </div>
+
+    </footer>
+
+  <script>
+    function toggleCard(row) {
+      var card = row.parentElement;
+      var isOpen = card.classList.contains('open');
+      document.querySelectorAll('.service-card.open').forEach(function(el) {
+        el.classList.remove('open');
+        el.querySelector('.service-card-toggle').textContent = '+';
+      });
+      if (!isOpen) {
+        card.classList.add('open');
+        card.querySelector('.service-card-toggle').textContent = '−';
+      }
+    }
+  </script>
+</body>
+                                             </html>
