@@ -581,14 +581,14 @@
       <div class="services-grid fade-up">
 
         <article class="service-card">
-          <div class="service-card-row" onclick="toggleCard(this)">
+          <div class="service-card-row" onclick="toggleCard(this)" role="button" aria-expanded="false" aria-controls="card-body-1">
             <div class="service-card-text">
               <h3>Fractional Talent Acquisition Support</h3>
               <p class="service-tagline">Part-time, embedded recruiting support &#8212; a real hiring function without the full-time overhead.</p>
             </div>
             <div class="service-card-toggle">+</div>
           </div>
-          <div class="service-card-body">
+          <div class="service-card-body" id="card-body-1">
             <p class="service-card-framing">For teams that need hiring to move but aren&#8217;t ready for a full-time recruiter. Engagements are scoped to your most critical roles and structured to stay focused.</p>
             <ul class="service-card-bullets">
               <li>Source and manage candidates for priority roles</li>
@@ -608,14 +608,14 @@
         </article>
 
         <article class="service-card">
-          <div class="service-card-row" onclick="toggleCard(this)">
+          <div class="service-card-row" onclick="toggleCard(this)" role="button" aria-expanded="false" aria-controls="card-body-2">
             <div class="service-card-text">
               <h3>Recruiting Systems &amp; Hiring Infrastructure</h3>
               <p class="service-tagline">A repeatable hiring process built from scratch, so you&#8217;re not reinventing it every time you open a role.</p>
             </div>
             <div class="service-card-toggle">+</div>
           </div>
-          <div class="service-card-body">
+          <div class="service-card-body" id="card-body-2">
             <p class="service-card-framing">Most early teams hire reactively. This work builds the structure underneath &#8212; so when you&#8217;re ready to scale, the foundation is already there and your team knows how to use it.</p>
             <ul class="service-card-bullets">
               <li>Design structured interview processes and evaluation scorecards</li>
@@ -626,7 +626,7 @@
             <hr class="service-card-divider" />
             <p class="service-card-how-label">How it works</p>
             <table class="service-card-timeline">
-              <thead><tr><th>Phase</th><th>Focus</th></tr></thead>
+              <thead><tr><th scope="col">Phase</th><th scope="col">Focus</th></tr></thead>
               <tbody>
                 <tr><td>Phase 1</td><td>Discovery &#8212; assess current state, gaps, and hiring goals <span style="font-weight:400;color:var(--text-muted);">(1&#8211;2 weeks)</span></td></tr>
                 <tr><td>Phase 2</td><td>Design &#8212; interview process, scorecards, and role profiles <span style="font-weight:400;color:var(--text-muted);">(1&#8211;2 weeks)</span></td></tr>
@@ -643,14 +643,14 @@
         </article>
 
         <article class="service-card">
-          <div class="service-card-row" onclick="toggleCard(this)">
+          <div class="service-card-row" onclick="toggleCard(this)" role="button" aria-expanded="false" aria-controls="card-body-3">
             <div class="service-card-text">
               <h3>Talent Network &amp; Pipeline Development</h3>
               <p class="service-tagline">Build the candidate pipelines and referral networks your company will rely on &#8212; before you urgently need them.</p>
             </div>
             <div class="service-card-toggle">+</div>
           </div>
-          <div class="service-card-body">
+          <div class="service-card-body" id="card-body-3">
             <p class="service-card-framing">Great hires rarely come from a job posting alone. This work helps you build sustainable sourcing relationships so you&#8217;re not starting from zero every time you open a role.</p>
             <ul class="service-card-bullets">
               <li>Define your ideal candidate profiles and referral source targets</li>
@@ -661,7 +661,7 @@
             <hr class="service-card-divider" />
             <p class="service-card-how-label">How it works</p>
             <table class="service-card-timeline">
-              <thead><tr><th>Phase</th><th>Focus</th></tr></thead>
+              <thead><tr><th scope="col">Phase</th><th scope="col">Focus</th></tr></thead>
               <tbody>
                 <tr><td>Phase 1</td><td>Define ideal candidate profiles and sourcing targets <span style="font-weight:400;color:var(--text-muted);">(1&#8211;2 weeks)</span></td></tr>
                 <tr><td>Phase 2</td><td>Build outreach strategy and initial pipeline <span style="font-weight:400;color:var(--text-muted);">(1&#8211;2 weeks)</span></td></tr>
@@ -678,14 +678,14 @@
         </article>
 
         <article class="service-card">
-          <div class="service-card-row" onclick="toggleCard(this)">
+          <div class="service-card-row" onclick="toggleCard(this)" role="button" aria-expanded="false" aria-controls="card-body-4">
             <div class="service-card-text">
               <h3>Recruiting &amp; People Operations Review</h3>
               <p class="service-tagline">A structured look at how your hiring and people processes are actually running &#8212; and where they&#8217;re slowing you down.</p>
             </div>
             <div class="service-card-toggle">+</div>
           </div>
-          <div class="service-card-body">
+          <div class="service-card-body" id="card-body-4">
             <p class="service-card-framing">Designed specifically for recruiting and people operations &#8212; not general business process consulting. If your hiring workflows feel inconsistent or hard to manage, this is where to start.</p>
             <ul class="service-card-bullets">
               <li>Audit current recruiting workflows, handoffs, and decision points</li>
@@ -696,7 +696,7 @@
             <hr class="service-card-divider" />
             <p class="service-card-how-label">How it works</p>
             <table class="service-card-timeline">
-              <thead><tr><th>Phase</th><th>Focus</th></tr></thead>
+              <thead><tr><th scope="col">Phase</th><th scope="col">Focus</th></tr></thead>
               <tbody>
                 <tr><td>Week 1</td><td>Audit &#8212; process review, stakeholder conversations, current-state mapping</td></tr>
                 <tr><td>Week 2</td><td>Analysis and prioritized recommendations</td></tr>
@@ -706,7 +706,7 @@
             <hr class="service-card-divider" />
             <p class="service-card-how-label">How it works</p>
             <table class="service-card-timeline">
-              <thead><tr><th>Phase</th><th>Focus</th></tr></thead>
+              <thead><tr><th scope="col">Phase</th><th scope="col">Focus</th></tr></thead>
               <tbody>
                 <tr><td>Week 1</td><td>Audit &#8212; process review, stakeholder conversations, current-state mapping</td></tr>
                 <tr><td>Week 2</td><td>Analysis and prioritized recommendations</td></tr>
@@ -836,10 +836,12 @@
       document.querySelectorAll('.service-card.open').forEach(function(el) {
         el.classList.remove('open');
         el.querySelector('.service-card-toggle').textContent = '+';
+        el.querySelector('.service-card-row').setAttribute('aria-expanded', 'false');
       });
       if (!isOpen) {
         card.classList.add('open');
         card.querySelector('.service-card-toggle').textContent = '−';
+        row.setAttribute('aria-expanded', 'true');
       }
     }
   </script>
