@@ -263,6 +263,60 @@
       font-family: var(--serif); font-size: 16px;
       color: var(--cream); line-height: 1.6; font-style: italic;
     }
+    .service-card-how-label {
+      font-family: var(--sans); font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.11em;
+      color: var(--gold); margin-bottom: 10px; margin-top: 0;
+    }
+    .service-card-divider {
+      border: none; border-top: 1px solid rgba(35,16,8,0.08);
+      margin: 4px 0 18px;
+    }
+    .service-card-fractional-note {
+      font-family: var(--serif); font-style: italic;
+      font-size: 16px; color: var(--text-muted); line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .service-card-timeline {
+      width: 100%; border-collapse: collapse; margin-bottom: 22px;
+    }
+    .service-card-timeline th {
+      font-family: var(--sans); font-size: 10px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--text-muted); text-align: left;
+      padding: 5px 10px 5px 0;
+      border-bottom: 1px solid rgba(35,16,8,0.10);
+    }
+    .service-card-timeline td {
+      font-family: var(--sans); font-size: 14px; color: var(--text-muted);
+      padding: 8px 10px 8px 0;
+      border-bottom: 1px solid rgba(35,16,8,0.05);
+      vertical-align: top; line-height: 1.5;
+    }
+    .service-card-timeline td:first-child {
+      font-weight: 700; white-space: nowrap;
+      width: 72px; color: var(--text-light);
+    }
+    .service-card-timeline tr:last-child td { border-bottom: none; }
+    .service-card-intro-box {
+      background: var(--parchment); border-radius: 12px;
+      padding: 24px 28px; margin-bottom: 24px;
+    }
+    .service-card-intro-head {
+      font-family: var(--sans); font-size: 14px; font-weight: 600;
+      color: var(--text-light); margin-bottom: 8px;
+    }
+    .service-card-intro-body {
+      font-family: var(--serif); font-style: italic;
+      font-size: 16px; color: var(--text-muted); line-height: 1.65;
+      margin-bottom: 12px;
+    }
+    .service-card-intro-link {
+      font-family: var(--sans); font-size: 13px; font-weight: 600;
+      color: var(--orange-hover); text-decoration: none;
+      border-bottom: 1px solid rgba(192,122,58,0.35);
+      padding-bottom: 1px;
+    }
 
     /* ── APPROACH — old style: dark brown, rounded cards, radiating orange ── */
     #approach { background: var(--brown); padding: 96px 0; }
@@ -519,6 +573,11 @@
         <h2>Focused support where growth tends to get messy.</h2>
         <p>Designed for early-stage and scaling organizations that want substance and clear outcomes &#8212; not a consulting engagement that outlasts the problem.</p>
       </div>
+      <div class="service-card-intro-box fade-up">
+        <p class="service-card-intro-head">Not sure where to start?</p>
+        <p class="service-card-intro-body">Every engagement is scoped around a conversation first. Timelines and deliverables flex to where your team actually is.</p>
+        <a href="#contact" class="service-card-intro-link">Start a conversation &#8594;</a>
+      </div>
       <div class="services-grid fade-up">
 
         <article class="service-card">
@@ -537,10 +596,14 @@
               <li>Coordinate interviews and own the candidate experience end-to-end</li>
               <li>Guide offer strategy and closing</li>
             </ul>
+            <hr class="service-card-divider" />
+            <p class="service-card-how-label">How it works</p>
+            <p class="service-card-fractional-note">Ongoing and embedded &#8212; typically 8&#8211;20 hrs/week, scoped to your active roles. Includes weekly check-ins, async candidate management, and offer support.</p>
             <div class="service-card-outcome">
               <p class="service-card-outcome-label">You walk away with</p>
               <p class="service-card-outcome-text">A focused recruiting function that keeps hiring moving &#8212; without adding permanent headcount.</p>
             </div>
+
           </div>
         </article>
 
@@ -560,10 +623,22 @@
               <li>Create consistent feedback and decision workflows across the hiring team</li>
               <li>Improve candidate experience from first touch to offer</li>
             </ul>
+            <hr class="service-card-divider" />
+            <p class="service-card-how-label">How it works</p>
+            <table class="service-card-timeline">
+              <thead><tr><th>Phase</th><th>Focus</th></tr></thead>
+              <tbody>
+                <tr><td>Phase 1</td><td>Discovery &#8212; assess current state, gaps, and hiring goals <span style="font-weight:400;color:var(--text-muted);">(1&#8211;2 weeks)</span></td></tr>
+                <tr><td>Phase 2</td><td>Design &#8212; interview process, scorecards, and role profiles <span style="font-weight:400;color:var(--text-muted);">(1&#8211;2 weeks)</span></td></tr>
+                <tr><td>Phase 3</td><td>Build &#8212; ATS setup or optimization, workflow documentation <span style="font-weight:400;color:var(--text-muted);">(1&#8211;2 weeks)</span></td></tr>
+                <tr><td>Phase 4</td><td>Handoff &#8212; team enablement and final review <span style="font-weight:400;color:var(--text-muted);">(if needed)</span></td></tr>
+              </tbody>
+            </table>
             <div class="service-card-outcome">
               <p class="service-card-outcome-label">You walk away with</p>
               <p class="service-card-outcome-text">A hiring system that saves time, sharpens decisions, and scales with you as the team grows.</p>
             </div>
+
           </div>
         </article>
 
@@ -583,10 +658,22 @@
               <li>Build community and relationship-based sourcing approaches</li>
               <li>Create lightweight processes to keep pipelines warm between active searches</li>
             </ul>
+            <hr class="service-card-divider" />
+            <p class="service-card-how-label">How it works</p>
+            <table class="service-card-timeline">
+              <thead><tr><th>Phase</th><th>Focus</th></tr></thead>
+              <tbody>
+                <tr><td>Phase 1</td><td>Define ideal candidate profiles and sourcing targets <span style="font-weight:400;color:var(--text-muted);">(1&#8211;2 weeks)</span></td></tr>
+                <tr><td>Phase 2</td><td>Build outreach strategy and initial pipeline <span style="font-weight:400;color:var(--text-muted);">(1&#8211;2 weeks)</span></td></tr>
+                <tr><td>Phase 3</td><td>Launch relationship-based sourcing <span style="font-weight:400;color:var(--text-muted);">(1&#8211;2 weeks)</span></td></tr>
+                <tr><td>Phase 4</td><td>Warm pipeline handoff and process documentation <span style="font-weight:400;color:var(--text-muted);">(if needed)</span></td></tr>
+              </tbody>
+            </table>
             <div class="service-card-outcome">
               <p class="service-card-outcome-label">You walk away with</p>
               <p class="service-card-outcome-text">A sustainable sourcing foundation that reduces dependency on reactive job postings and agency spend.</p>
             </div>
+
           </div>
         </article>
 
@@ -606,10 +693,31 @@
               <li>Simplify and restructure for cleaner, more consistent execution</li>
               <li>Deliver practical recommendations your team can act on immediately</li>
             </ul>
+            <hr class="service-card-divider" />
+            <p class="service-card-how-label">How it works</p>
+            <table class="service-card-timeline">
+              <thead><tr><th>Phase</th><th>Focus</th></tr></thead>
+              <tbody>
+                <tr><td>Week 1</td><td>Audit &#8212; process review, stakeholder conversations, current-state mapping</td></tr>
+                <tr><td>Week 2</td><td>Analysis and prioritized recommendations</td></tr>
+                <tr><td>Week 3</td><td>Action plan and implementation kickoff <span style="font-weight:400;color:var(--text-muted);">(if needed)</span></td></tr>
+              </tbody>
+            </table>
+            <hr class="service-card-divider" />
+            <p class="service-card-how-label">How it works</p>
+            <table class="service-card-timeline">
+              <thead><tr><th>Phase</th><th>Focus</th></tr></thead>
+              <tbody>
+                <tr><td>Week 1</td><td>Audit &#8212; process review, stakeholder conversations, current-state mapping</td></tr>
+                <tr><td>Week 2</td><td>Analysis and prioritized recommendations</td></tr>
+                <tr><td>Week 3</td><td>Action plan and implementation kickoff <span style="font-weight:400;color:var(--text-muted);">(if needed)</span></td></tr>
+              </tbody>
+            </table>
             <div class="service-card-outcome">
               <p class="service-card-outcome-label">You walk away with</p>
               <p class="service-card-outcome-text">Cleaner hiring and people operations so your team moves faster and fewer things fall through the cracks.</p>
             </div>
+
           </div>
         </article>
 
@@ -695,6 +803,7 @@
             </div>
             <button type="submit" class="form-submit">Send Message</button>
             <p class="form-note">No pitch, no pressure. Just a conversation to see if it's a fit.</p>
+              <p class="form-note" style="margin-top:8px;opacity:0.7;">I'll respond within 1&#8211;2 business days to find a time that works.</p>
           </form>
         </div>
       </div>
