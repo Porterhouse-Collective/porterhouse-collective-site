@@ -75,6 +75,82 @@
     .nav-cta:hover { background: rgba(200,146,42,0.12) !important; border-color: var(--gold) !important; }
     @media (max-width: 768px) { .nav-links { display: none; } .nav-inner { padding: 0 24px; } }
 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Porterhouse Collective</title>
+  <meta name="description" content="Fractional recruiting and talent operations support for early-stage founders. Hiring infrastructure, recruiting systems, and pipeline development built for teams that aren't ready for a full-time TA hire yet." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --brown:       #231008;
+      --brown-mid:   #3a1c0c;
+      --cream:       #f4efe8;
+      --cream-warm:  #ede5d8;
+      --parchment:   #e8ddc8;
+      --gold:        #c8922a;
+      --gold-lite:   #d9aa52;
+      --gold-dim:    #8b6020;
+      --orange:      #a85a1a;
+      --orange-hover:#c07a3a;
+      --text-dark:   #f0e6d0;
+      --text-muted:  #9e8070;
+      --text-dim:    #6b4a2a;
+      --text-light:  #231008;
+      --text-mid:    #7a5a3a;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'Jost', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--cream); color: var(--text-light); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 40px; }
+    @media (max-width: 768px) { .container { padding: 0 24px; } }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--brown);
+      border-bottom: 1px solid rgba(200,146,42,0.15);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto; padding: 0 40px;
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 13px; }
+    .nav-stamp-img {
+      width: 36px; height: 36px; border-radius: 50%;
+      mix-blend-mode: lighten; opacity: 0.92;
+    }
+    .nav-wordmark { display: flex; flex-direction: column; gap: 2px; line-height: 1; }
+    .nav-wordmark-primary {
+      font-family: var(--serif); font-size: 15px; font-weight: 700;
+      letter-spacing: 0.1em; color: var(--text-dark); text-transform: uppercase;
+    }
+    .nav-wordmark-sub {
+      font-family: var(--serif); font-size: 13px; font-weight: 400;
+      font-style: italic; letter-spacing: 0.18em; color: var(--orange-hover);
+    }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a {
+      font-size: 11px; font-weight: 400; letter-spacing: 0.12em;
+      text-transform: uppercase; color: #c4a882; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-dark); }
+    .nav-cta {
+      color: var(--text-dark) !important;
+      border: 0.5px solid rgba(200,146,42,0.6) !important;
+      padding: 7px 18px !important; border-radius: 2px;
+      transition: background 0.2s, border-color 0.2s !important;
+    }
+    .nav-cta:hover { background: rgba(200,146,42,0.12) !important; border-color: var(--gold) !important; }
+    @media (max-width: 768px) { .nav-links { display: none; } .nav-inner { padding: 0 24px; } }
+
     /* ── HERO ── */
     #hero {
       background: var(--brown); padding: 88px 0 96px;
@@ -728,7 +804,7 @@
             <span class="approach-step-num">01</span>
             <span class="approach-step-label">Assess</span>
           </div>
-          <h3>Understand what is happening beneath the surface.</h3>
+          <h3>Identify what's starting to break — before it becomes a pattern.</h3>
           <p>Review existing processes, hiring needs, workflow friction, and decision points to identify what is slowing progress or creating inconsistency.</p>
         </div>
         <div class="approach-card fade-up delay-1">
